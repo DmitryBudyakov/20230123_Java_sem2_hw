@@ -38,24 +38,16 @@ public class PowerOfNumber {
         System.out.printf("Число b = %d\n", b);
 
         Object result = countPowerOfNumber(a, b);
+        // рещультат в виде строки
+        String resultOut = result.toString();
 
-        // обработка результата для вывода в терминал
-        // System.out.println();
+        // вывод результата в консоль
         System.out.println("\nРезультат вычисления:");
-        String str = String.format("%d ^ %d ", a, b);   // a в степени b (a ^ b)
-        if (result instanceof String) {
-            System.out.printf("%s - %s\n", str, result);
-        }
-        if (result instanceof Integer) {
-            System.out.printf("%s = %d\n", str, result);
-        }
-        if (result instanceof Double) {
-            System.out.printf("%s = %.2f\n", str, result);
-        }
+        System.out.printf("a = %d, b = %d, %d ^ %d, ответ: %s\n", a, b, a, b, resultOut);
 
         // запись результата в файл
         File outpuFile = new File("output.txt");
-        saveToFile(outpuFile, result);
+        saveToFile(outpuFile, resultOut);
         
     }
 
